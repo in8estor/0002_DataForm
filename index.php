@@ -22,6 +22,7 @@
             <label for="text">Введите e-mail:</label><br>
             <textarea name="text" id="text"></textarea>
         </p>
+        <button type="submit">Отправить</button>
     </form>
 
 </body>
