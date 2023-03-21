@@ -19,8 +19,8 @@
             <input type="text" name="name" id="name">
         </p>
         <p>
-            <label for="text">Введите e-mail:</label><br>
-            <textarea name="text" id="text"></textarea>
+            <label for="e-mail">Введите e-mail:</label><br>
+            <input type="e-mail" name="e-mail" id="e-mail">
         </p>
         <button type="submit">Отправить</button>
     </form>
