@@ -18,6 +18,10 @@
             <label for="name">Введите ваше имя:</label><br>
             <input type="text" name="name" id="name">
         </p>
+        <p>
+            <label for="text">Введите e-mail:</label><br>
+            <textarea name="text" id="text"></textarea>
+        </p>
     </form>
 
 </body>
