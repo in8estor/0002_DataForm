@@ -1,6 +1,27 @@
 <?php
 
 //phpinfo();
+
+$mysqlContainer = 'mysql';
+$username = 'root';
+$password = 'root';
+
+// имя контейнера, имя пользователя, пароль
+$connect = mysqli_connect($mysqlContainer, $username, $password);
+
+// проверяем соединение
+if (!$connect) {
+    die('NO CONNECTION' . mysqli_connect_error()) . PHP_EOL;
+} else {
+    echo 'CONNECTED' . PHP_EOL;
+}
+
+//echo "<pre>";
+//var_dump($connect);
+
+// создаем базу данных
+//$sql = 'CREATE DATABASE GuestBook';
+$connect->query('CREATE DATABASE `GuestBook`');
 ?>
 
 <!DOCTYPE html>
