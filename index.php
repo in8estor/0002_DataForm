@@ -1,6 +1,13 @@
 <?php
 
 require_once 'connect.php';
+require_once 'functions.php';
+
+if(!empty($_POST)){
+    save_message();
+    header("Location: {$_SERVER['PHP_SELF']}");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
