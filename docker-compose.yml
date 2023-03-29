@@ -2,18 +2,18 @@ version: '3'
 services:
     php:
         build:
-            context: ./php # своя сборка образа на основании dockerfile
+            context: ./docker/php # своя сборка образа на основании dockerfile
         #image: php:8.2.3-fpm
         volumes:
-            - ../:/var/www/html # /var/www/html для быстрых проектов...ниже в образе nginx тоже изменить
+            - ./:/var/www/html # /var/www/html для быстрых проектов...ниже в образе nginx тоже изменить
 
     nginx:
         image: nginx:latest # используем последний стабильный образ nginx
         ports:
             - 80:80 # маршрутизируем порты
         volumes:
-            - ../:/var/www/html # монтируем директории, слева директории на основной машине, справа - куда они монтируются в контейнере
-            - ./nginx:/etc/nginx/conf.d
+            - ./:/var/www/html # монтируем директории, слева директории на основной машине, справа - куда они монтируются в контейнере
+            - ./docker/nginx:/etc/nginx/conf.d
         depends_on:
             - php
 
@@ -26,4 +26,4 @@ services:
             - MYSQL_ROOT_PASSWORD=root # задаем пароль для root пользователя
             #- MYSQL_USER=user
         volumes:
-            - ../../../data/mysql:/var/lib/mysql
+            - ../../data/mysql:/var/lib/mysql
